@@ -3,7 +3,7 @@ import DateHelper from "../src/DateHelper";
 /**
  * Get two timestamps for testing
  */
-function getTestDate(hours = 0, minutes = 0, seconds = 0): [number, number] {
+function getTestTime(hours = 0, minutes = 0, seconds = 0): [number, number] {
   let totalSeconds = seconds;
   totalSeconds += minutes * 60;
   totalSeconds += hours * 60 * 60;
@@ -16,14 +16,14 @@ function getTestDate(hours = 0, minutes = 0, seconds = 0): [number, number] {
 
 test("Testing almost same", () => {
   const date1 = DateHelper.getRelativeDate(1605236401152, 1605236402465);
-  const date2 = DateHelper.getRelativeDate(...getTestDate(0, 0, 10));
+  const date2 = DateHelper.getRelativeDate(...getTestTime(0, 0, 10));
 
   expect(date1).toBe("1m ago");
   expect(date2).toBe("1m ago");
 });
 
 test("Testing minutes apart", () => {
-  const date1 = DateHelper.getRelativeDate(...getTestDate(0, 3, 10));
+  const date1 = DateHelper.getRelativeDate(...getTestTime(0, 3, 10));
   const date2 = DateHelper.getRelativeDate(1605235670659, 1605235814505);
   expect(date1).toBe("3m ago");
   expect(date2).toBe("3m ago");
