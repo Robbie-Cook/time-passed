@@ -1,4 +1,4 @@
-export default class DateHelper {
+export default class Time {
   /**
    * Get a nicely stringified version of relative time between two timestamps
    * @param timestamp Unix time {@link https://en.wikipedia.org/wiki/Unix_time}

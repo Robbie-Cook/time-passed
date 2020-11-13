@@ -1,3 +1,3 @@
-import DateHelper from "./DateHelper";
+import Time from "./Time";
 
-export default DateHelper;
+export default Time;
