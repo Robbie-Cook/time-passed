@@ -23,22 +23,29 @@ test("Testing almost same", () => {
 });
 
 test("Testing minutes apart", () => {
-  const date1 = DateHelper.getRelativeDate(...getTestTime(0, 3, 10));
+  const date1 = DateHelper.getRelativeDate(...getTestTime(0, 2, 10));
   const date2 = DateHelper.getRelativeDate(1605235670659, 1605235814505);
-  expect(date1).toBe("3m ago");
-  expect(date2).toBe("3m ago");
+  expect(date1).toBe("2m ago");
+  expect(date2).toBe("2m ago");
 });
 
 test("Testing 1 hour apart", () => {
-  const date = DateHelper.getRelativeDate(1605238208231, 1605234608227);
-  expect(date).toBe("1 hour ago");
+  const date1 = DateHelper.getRelativeDate(1605238208231, 1605234608227);
+  const date2 = DateHelper.getRelativeDate(...getTestTime(1));
+  expect(date1).toBe("1 hour ago");
+  expect(date2).toBe("1 hour ago");
 });
 
 test("Testing 2 hours apart", () => {
-  const date = DateHelper.getRelativeDate(1605249270322, 1605242070305);
-  expect(date).toBe("2 hours ago");
+  const date1 = DateHelper.getRelativeDate(1605249270322, 1605242070305);
+  const date2 = DateHelper.getRelativeDate(...getTestTime(2));
+  expect(date1).toBe("2 hours ago");
+  expect(date2).toBe("2 hours ago");
 });
+
 test("Testing 2 hours 10 mins apart", () => {
-  const date = DateHelper.getRelativeDate(1605249270322, 1605242070305);
-  expect(date).toBe("2 hours ago");
+  const date1 = DateHelper.getRelativeDate(1605249270322, 1605242070305);
+  const date2 = DateHelper.getRelativeDate(...getTestTime(2, 10, 0));
+  expect(date1).toBe("2 hours ago");
+  expect(date2).toBe("2 hours ago");
 });
