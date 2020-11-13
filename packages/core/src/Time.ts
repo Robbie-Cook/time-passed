@@ -1,6 +1,7 @@
 export default class Time {
   /**
-   * Get a nicely stringified version of relative time between two timestamps
+   * Get a nicely stringified version of relative time between two timestamps.
+   * Timestamps are milliseconds since 1970
    * @param timestamp Unix time {@link https://en.wikipedia.org/wiki/Unix_time}
    */
   static getRelativeTime(
