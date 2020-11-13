@@ -8,5 +8,6 @@ export default class DateHelper {
     const timeDifference = currentTime - timestamp;
 
     const minutesDiffence = timeDifference / 60;
+    return '';
   }
 }

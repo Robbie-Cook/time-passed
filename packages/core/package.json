@@ -4,7 +4,7 @@
   "description": "A package to calculate the time passed since another timestamp",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,8 @@
   },
   "homepage": "https://github.com/Robbie-Cook/time-passed#readme",
   "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "ts-jest": "^26.4.4",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.5"
   }
