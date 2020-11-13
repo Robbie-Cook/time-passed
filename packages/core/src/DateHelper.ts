@@ -4,10 +4,12 @@ export default class DateHelper {
    * {@see https://stackoverflow.com/a/11832950/6024982}
    */
   private static round(number: number): number {
+    // return Math.ceil(Math.round((number + Number.EPSILON) * 100) / 100);
     return Math.ceil(Math.round((number + Number.EPSILON) * 100) / 100);
   }
 
   /**
+   * Get a nicely stringified version of relative time between two timestamps
    * @param timestamp Unix time {@link https://en.wikipedia.org/wiki/Unix_time}
    */
   static getRelativeDate(
@@ -24,10 +26,9 @@ export default class DateHelper {
     }
 
     // hour difference
-    const hoursDifference = minutesDifference / 60;
+    const hoursDifference = this.round(minutesDifference / 60);
     if (hoursDifference < 24) {
-      console.log(hoursDifference);
-      return `${this.round(hoursDifference)} hours ago`;
+      return `${hoursDifference} hour${hoursDifference === 1 ? "" : "s"} ago`;
     }
 
     return `${minutesDifference}`;
