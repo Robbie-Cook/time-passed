@@ -3,10 +3,10 @@ export default class DateHelper {
    * Get a nicely stringified version of relative time between two timestamps
    * @param timestamp Unix time {@link https://en.wikipedia.org/wiki/Unix_time}
    */
-  static getRelativeDate(
+  static getRelativeTime(
     timestamp: number,
     currentTimestamp = Date.now()
-  ): string {
+  ): string | null {
     const secondsDifference = Math.abs((currentTimestamp - timestamp) / 1000);
 
     // If the timestamp is within the last few minutes,
@@ -26,6 +26,13 @@ export default class DateHelper {
       return `${hoursDifference} hour${hoursDifference === 1 ? "" : "s"} ago`;
     }
 
-    return `${minutesDifference}`;
+    // day difference
+    // (Month is simplified to 30 days)
+    const days = Math.round(hoursDifference / 24);
+    if (days < 30) { 
+      return `${days} day${days === 1 ? "" : "s"} ago`;
+    }
+
+    return null;
   }
 }
