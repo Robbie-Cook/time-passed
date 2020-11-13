@@ -1,6 +1,6 @@
 {
   "name": "time-passed",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A package to calculate the time passed since another timestamp",
   "main": "dist/index.js",
   "scripts": {
