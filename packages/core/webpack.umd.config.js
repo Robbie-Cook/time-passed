@@ -6,7 +6,7 @@ module.exports = {
     path: path.resolve(__dirname, "./umd"),
     filename: "index.js",
     libraryTarget: "umd",
-    library: "MyPackageName",
+    library: "TimePassed",
   },
 
   mode: "production",
