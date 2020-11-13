@@ -1,3 +1,3 @@
-import DateHelper from "./Date";
+import DateHelper from "./DateHelper";
 
-export default Date;
+export default DateHelper;
