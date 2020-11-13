@@ -11,6 +11,7 @@ test("Testing minutes apart", () => {
 });
 
 test("Testing hours apart", () => {
-  const date = DateHelper.getRelativeDate(1605235670659, 1605235814505);
+  const date = DateHelper.getRelativeDate(1605238208231, 1605234608227);
   expect(date).toBe("3m ago");
 });
+
