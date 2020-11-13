@@ -4,6 +4,7 @@ import DateHelper from "../src/DateHelper";
  * Get two timestamps for testing.
  */
 function getTestTime({
+  months = 0,
   days = 0,
   hours = 0,
   minutes = 0,
@@ -13,6 +14,7 @@ function getTestTime({
   totalSeconds += minutes * 60;
   totalSeconds += hours * 60 * 60;
   totalSeconds += days * 60 * 60 * 24;
+  totalSeconds += months * 60 * 60 * 24 * 30;
 
   const totalMilliseconds = totalSeconds * 1000;
 
@@ -70,7 +72,32 @@ test("Testing 29 days apart", () => {
   expect(date).toBe("29 days ago");
 });
 
-test("Testing 30 days apart", () => {
+test("Testing 30 days apart (1 month)", () => {
   const date = DateHelper.getRelativeTime(...getTestTime({ days: 30 }));
   expect(date).toBe("1 month ago");
+});
+
+test("Testing 2 months apart", () => {
+  const date = DateHelper.getRelativeTime(...getTestTime({ months: 2 }));
+  expect(date).toBe("2 months ago");
+});
+
+test("Testing 11 months apart", () => {
+  const date = DateHelper.getRelativeTime(...getTestTime({ months: 11 }));
+  expect(date).toBe("11 months ago");
+});
+
+test("Testing 1 year apart", () => {
+  const date = DateHelper.getRelativeTime(...getTestTime({ months: 12 }));
+  expect(date).toBe("1 year ago");
+});
+
+test("Testing 1 year 10 months apart", () => {
+  const date = DateHelper.getRelativeTime(...getTestTime({ months: 12 + 10 }));
+  expect(date).toBe("2 years ago");
+});
+
+test("Testing 2 years apart", () => {
+  const date = DateHelper.getRelativeTime(...getTestTime({ months: 24 }));
+  expect(date).toBe("2 years ago");
 });
