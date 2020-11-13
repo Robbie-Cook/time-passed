@@ -39,6 +39,9 @@ function App() {
         A library that helps you with showing the time passed since some other
         timestamp.
       </p>
+      <p>
+        Helpful for posts and updates and such.
+      </p>
       <h2 id="usage">Usage</h2>
       <h3>Import</h3>
       <pre>
