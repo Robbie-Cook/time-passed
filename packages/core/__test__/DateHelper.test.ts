@@ -1,7 +1,7 @@
 import DateHelper from "../src/DateHelper";
 
 /**
- * Get two timestamps for testing
+ * Get two timestamps for testing.
  */
 function getTestTime({
   days = 0,
@@ -68,4 +68,9 @@ test("Testing 24 hours (1 day) apart", () => {
 test("Testing 29 days apart", () => {
   const date = DateHelper.getRelativeTime(...getTestTime({ days: 29 }));
   expect(date).toBe("29 days ago");
+});
+
+test("Testing 30 days apart", () => {
+  const date = DateHelper.getRelativeTime(...getTestTime({ days: 30 }));
+  expect(date).toBe("1 month ago");
 });

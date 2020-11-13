@@ -33,6 +33,13 @@ export default class DateHelper {
       return `${days} day${days === 1 ? "" : "s"} ago`;
     }
 
+    // day difference
+    // (Month is simplified to 30 days)
+    const months = Math.round(days / 30);
+    if (months < 12) { 
+      return `${months} month${months === 1 ? "" : "s"} ago`;
+    }
+
     return null;
   }
 }
