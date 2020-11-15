@@ -33,5 +33,3 @@ or in UMD
   const newTime = window.TimePassed.default.getRelativeTime(Date.now(), 1605236401152);
 </script>
 ```
-
-## Running
