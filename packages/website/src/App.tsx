@@ -8,7 +8,7 @@ import "./App.css";
 import Time from "time-passed";
 import Item from "./components/Item";
 import hljs from "highlight.js";
-import 'highlight.js/styles/github.css';
+import "highlight.js/styles/github.css";
 
 function App() {
   // const [releases, setReleases] = React.useState<Record<string, any> | null>(
@@ -39,8 +39,12 @@ function App() {
         A library that helps you with showing the time passed since some other
         timestamp.
       </p>
+      <p>Helpful for posts and updates and such.</p>
       <p>
-        Helpful for posts and updates and such.
+        NOTE: uses{" "}
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now">
+          millisecond Unix time
+        </a>
       </p>
       <h2 id="usage">Usage</h2>
       <h3>Import</h3>
