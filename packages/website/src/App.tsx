@@ -40,7 +40,7 @@ function App() {
         timestamp.
       </p>
       <p>Helpful for posts and updates and such.</p>
-      <h3><a href="https://www.npmjs.com/package/time-passed?activeTab=dependencies">NPM Package: time-passed</a></h3>
+      <h3><a href="https://www.npmjs.com/package/time-passed">NPM Package: time-passed</a></h3>
       <p>
         NOTE: uses{" "}
         <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now">
